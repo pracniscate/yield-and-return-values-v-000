@@ -2,11 +2,15 @@ require 'pry'
 
 def hello(array)
   i = 0
+  # set a var collection to an empty array
+  collection = []
   while i < array.length
-    binding.pry
-    yield(array[i])
+    # push the return value into the collection array
+    collection << yield(array[i])
     i += 1
   end
+  # return the new collection at the end of the method
+  collection
 end
 
 
